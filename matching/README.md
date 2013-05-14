@@ -1,16 +1,15 @@
-DOCUMENTATION
-------------------------------------------------------
-How to collect the data used in the "match.py" script
-ICOS Data Camp
-May 21, 2013
-Russell J. Funk
-------------------------------------------------------
-CONTENTS
+# How to collect the data used in the "match.py" script
+
+### ICOS Data Camp
+### May 21, 2013
+### Russell J. Funk
+
+## CONTENTS
   I. DEPARTMENT OF DEFENSE DATA
  II. OPEN SECRETS DATA
 III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
-I. DEPARTMENT OF DEFENSE DATA
+## I. DEPARTMENT OF DEFENSE DATA
 
 1. Go to http://www.dodsbir.net/awards/ and change "AND Matches Within" to 
    "Keywords, Proposal Title and Abstract"
@@ -18,7 +17,7 @@ I. DEPARTMENT OF DEFENSE DATA
 3. Click "Printable Report", then "Download to Excel", and save as 
    "AwardsToExcel.csv" to the "data" directory of the "drones" folder.
    
-II. OPEN SECRETS DATA
+## II. OPEN SECRETS DATA
 
 1. Go to https://www.opensecrets.org/api/admin/index.php?function=signup to 
    register.
@@ -40,7 +39,7 @@ II. OPEN SECRETS DATA
    column/header names. "AwardsToExcel.csv" also has "," separated fields, but 
    uses '"' to enclose all fields, not just text.
 
-III. BONUS CODE FOR LOADING DATA INTO MYSQL
+## III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 1. Create a new schema in MySQL:
 
@@ -48,6 +47,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 2. Create a new table in the schema for the DOD data.
 
+```mysql
    CREATE TABLE `AwardsToExcel` (
      `Program` varchar(45) DEFAULT NULL,
      `Control_No` varchar(45) DEFAULT NULL,
@@ -85,6 +85,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
      `Full_Topic_No` varchar(45) DEFAULT NULL,
      `Solicitation` varchar(45) DEFAULT NULL
    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+```
 
 3. Load the data into the table.
 
