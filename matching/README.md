@@ -1,4 +1,4 @@
-## How to collect the data used in the "match.py" script
+## How to collect the data used in the `match.py` script
 
 #### ICOS Data Camp
 May 21, 2013
@@ -6,16 +6,18 @@ Russell J. Funk
 
 ### CONTENTS
 I. DEPARTMENT OF DEFENSE DATA
+
 II. OPEN SECRETS DATA
+
 III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 ### I. DEPARTMENT OF DEFENSE DATA
 
-1. Go to http://www.dodsbir.net/awards/ and change "AND Matches Within" to 
-   "Keywords, Proposal Title and Abstract"
-2. Search for "UAV"
-3. Click "Printable Report", then "Download to Excel", and save as 
-   "AwardsToExcel.csv" to the "data" directory of the "drones" folder.
+1. Go to http://www.dodsbir.net/awards/ and change `AND Matches Within` to 
+   `Keywords, Proposal Title and Abstract`
+2. Search for `UAV`
+3. Click `Printable Report`, then `Download to Excel`, and save as 
+   `AwardsToExcel.csv` to the `data` directory of the `matching` folder.
    
 ### II. OPEN SECRETS DATA
 
@@ -24,20 +26,20 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 2. Check your email to confirm registration, then log in.
 
-3. Make sure you are logged in, then click "Bulk Data", then "Lobbying Tables" 
+3. Make sure you are logged in, then click `Bulk Data`, then `Lobbying Tables` 
    to begin downloading. Alternatively, try 
    http://www.opensecrets.org/MyOS/download.php?f=Lobby.zip to download 
    directly. Or (perhaps preferably) use the /data in your folder for this 
    session to avoid the large download.
 
-4. Unzip the file, and add the file "lob_indus.txt" to the "data" directory of 
-   the "drones" folder. You should find a copy already there in case you have 
+4. Unzip the file, and add the file `lob_indus.txt` to the `data` directory of 
+   the `matching` folder. You should find a copy already there in case you have 
    problems.
     
-5. Note some differences with each file. "lob_indus.txt" has "," separated 
-   fields with pipes "|" enclosing text fields. It is also missing 
-   column/header names. "AwardsToExcel.csv" also has "," separated fields, but 
-   uses '"' to enclose all fields, not just text.
+5. Note some differences with each file. `lob_indus.txt` has `,` separated 
+   fields with pipes `|` enclosing text fields. It is also missing 
+   column/header names. `AwardsToExcel.csv` also has `,` separated fields, but 
+   uses `"` to enclose all fields, not just text.
 
 ### III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
@@ -101,7 +103,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
       ignore 1 lines;
 ```
 
-   You will get a warning, "Row 879 doesn't contain data for all columns" that 
+   You will get a warning, `Row 879 doesn't contain data for all columns` that 
    we can ignore for now.
 
 4. Create a new table in the schema for the OS data.
