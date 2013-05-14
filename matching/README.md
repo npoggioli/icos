@@ -1,15 +1,15 @@
-# How to collect the data used in the "match.py" script
+## How to collect the data used in the "match.py" script
 
-### ICOS Data Camp
-### May 21, 2013
-### Russell J. Funk
+#### ICOS Data Camp
+#### May 21, 2013
+#### Russell J. Funk
 
-## CONTENTS
+### CONTENTS
   I. DEPARTMENT OF DEFENSE DATA
  II. OPEN SECRETS DATA
 III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
-## I. DEPARTMENT OF DEFENSE DATA
+### I. DEPARTMENT OF DEFENSE DATA
 
 1. Go to http://www.dodsbir.net/awards/ and change "AND Matches Within" to 
    "Keywords, Proposal Title and Abstract"
@@ -17,7 +17,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
 3. Click "Printable Report", then "Download to Excel", and save as 
    "AwardsToExcel.csv" to the "data" directory of the "drones" folder.
    
-## II. OPEN SECRETS DATA
+### II. OPEN SECRETS DATA
 
 1. Go to https://www.opensecrets.org/api/admin/index.php?function=signup to 
    register.
@@ -39,7 +39,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
    column/header names. "AwardsToExcel.csv" also has "," separated fields, but 
    uses '"' to enclose all fields, not just text.
 
-## III. BONUS CODE FOR LOADING DATA INTO MYSQL
+### III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 1. Create a new schema in MySQL:
 
@@ -89,6 +89,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 3. Load the data into the table.
 
+```mysql
    load data local infile 'AwardsToExcel.csv' 
       into table AwardsToExcel 
       fields 
@@ -96,12 +97,14 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
          enclosed by '"'  
       lines terminated by ',\r\n' 
       ignore 1 lines;
+```
 
    You will get a warning, "Row 879 doesn't contain data for all columns" that 
    we can ignore for now.
 
 4. Create a new table in the schema for the OS data.
 
+```mysql
    CREATE TABLE `lob_indus` (
      `Client` varchar(50) DEFAULT NULL,
      `Sub` varchar(50) DEFAULT NULL,
@@ -109,9 +112,11 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
      `year` varchar(4) DEFAULT NULL,
      `Catcode` varchar(5) DEFAULT NULL
    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+```
 
 5. Load the data into the table.
 
+```mysql
    load data local infile 'lob_indus.txt' 
       into table lob_indus 
       fields 
@@ -119,3 +124,4 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
          optionally enclosed by '|'  
       lines terminated by '\r\n' 
       ignore 0 lines;
+```
