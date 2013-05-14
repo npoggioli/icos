@@ -1,12 +1,12 @@
 ## How to collect the data used in the "match.py" script
 
 #### ICOS Data Camp
-#### May 21, 2013
-#### Russell J. Funk
+May 21, 2013
+Russell J. Funk
 
 ### CONTENTS
-  I. DEPARTMENT OF DEFENSE DATA
- II. OPEN SECRETS DATA
+I. DEPARTMENT OF DEFENSE DATA
+II. OPEN SECRETS DATA
 III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 ### I. DEPARTMENT OF DEFENSE DATA
@@ -43,7 +43,9 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
 
 1. Create a new schema in MySQL:
 
+```mysql
    CREATE DATABASE `icos`;
+```
 
 2. Create a new table in the schema for the DOD data.
 
