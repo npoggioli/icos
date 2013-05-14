@@ -7,7 +7,7 @@
 """match.py: Demonstrate tools for linking messy data for ICOS Data Camp.
 
 Provides a step by step demonstration of some basic tools for linking data
-on contracts from the Department of Defense to lobbying contributions reported
+on contracts from the Department of Defense to lobbying payments reported
 on OpenSecrets.
 
 """
