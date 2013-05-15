@@ -34,13 +34,13 @@
 
 1. Create a new schema in MySQL:
 
-```mysql
+   ```mysql
    CREATE DATABASE `icos`;
-```
+   ```
 
 2. Create a new table in the schema for the DOD data.
 
-```mysql
+   ```mysql
    CREATE TABLE `AwardsToExcel` (
      `Program` varchar(45) DEFAULT NULL,
      `Control_No` varchar(45) DEFAULT NULL,
@@ -78,11 +78,11 @@
      `Full_Topic_No` varchar(45) DEFAULT NULL,
      `Solicitation` varchar(45) DEFAULT NULL
    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-```
+   ```
 
 3. Load the data into the table.
 
-```mysql
+   ```mysql
    load data local infile 'AwardsToExcel.csv' 
       into table AwardsToExcel 
       fields 
@@ -90,14 +90,14 @@
          enclosed by '"'  
       lines terminated by ',\r\n' 
       ignore 1 lines;
-```
+   ```
 
    You will get a warning, `Row 879 doesn't contain data for all columns` that 
    we can ignore for now.
 
 4. Create a new table in the schema for the OS data.
 
-```mysql
+   ```mysql
    CREATE TABLE `lob_indus` (
      `Client` varchar(50) DEFAULT NULL,
      `Sub` varchar(50) DEFAULT NULL,
@@ -105,11 +105,11 @@
      `year` varchar(4) DEFAULT NULL,
      `Catcode` varchar(5) DEFAULT NULL
    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-```
+   ```
 
 5. Load the data into the table.
 
-```mysql
+   ```mysql
    load data local infile 'lob_indus.txt' 
       into table lob_indus 
       fields 
@@ -117,4 +117,4 @@
          optionally enclosed by '|'  
       lines terminated by '\r\n' 
       ignore 0 lines;
-```
+   ```
