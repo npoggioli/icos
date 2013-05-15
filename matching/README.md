@@ -1,18 +1,6 @@
 ## How to collect the data used in the `match.py` script
 
-#### ICOS Data Camp
-May 21, 2013
-
-Russell J. Funk
-
-### CONTENTS
-I. DEPARTMENT OF DEFENSE DATA
-
-II. OPEN SECRETS DATA
-
-III. BONUS CODE FOR LOADING DATA INTO MYSQL
-
-### I. DEPARTMENT OF DEFENSE DATA
+### Department of Defense Data
 
 1. Go to http://www.dodsbir.net/awards/ and change `AND Matches Within` to 
    `Keywords, Proposal Title and Abstract`
@@ -20,7 +8,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
 3. Click `Printable Report`, then `Download to Excel`, and save as 
    `AwardsToExcel.csv` to the `data` directory of the `matching` folder.
    
-### II. OPEN SECRETS DATA
+### OpenSecrets Data
 
 1. Go to https://www.opensecrets.org/api/admin/index.php?function=signup to 
    register.
@@ -42,7 +30,7 @@ III. BONUS CODE FOR LOADING DATA INTO MYSQL
    column/header names. `AwardsToExcel.csv` also has `,` separated fields, but 
    uses `"` to enclose all fields, not just text.
 
-### III. BONUS CODE FOR LOADING DATA INTO MYSQL
+### Bonus Code for Loading Data into MySQL
 
 1. Create a new schema in MySQL:
 
